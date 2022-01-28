@@ -4,7 +4,7 @@ const port = process.env.port || 3000
 const nodemailer = require('nodemailer')
 
 //Importer la logique de la page d acceuil 
-const generatorModele = require('./page/page-get.js') 
+const generatorModele = require('./api/page/page-get') 
 
 //ecouter la methode GET et la route 
 app.get('/', async(req,res) => {
@@ -47,7 +47,7 @@ app.post('/', (req,res)=>{
 
     const mailOptions = {
         from: req.body.email,
-        to: 'mickaelat09@gmail.com',
+        loaderto: 'mickaelat09@gmail.com',
         subject: `Message from ${req.body.email}: ${req.body.subject}`,
         text: req.body.subject
     }
