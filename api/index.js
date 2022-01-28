@@ -1,24 +1,75 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.port || 3000
+const nodemailer = require('nodemailer')
 
 //Importer la logique de la page d acceuil 
-const generatorHomePage = require('./page/index-get.js') 
+const generatorModele = require('./page/page-get.js') 
 
 //ecouter la methode GET et la route 
 app.get('/', async(req,res) => {
-    const indexHtml = await generatorHomePage()
+    const indexHtml = await generatorModele('index')
 
     res.send(indexHtml)
     
 })
 
-//ecoute les requete du repertoire styles/xx
+app.get ('/tech', async(req,res) => {
+    const techHtml = await generatorModele('tech')
+    res.send(techHtml)
+})
 
-// retourne les images 
-app.use('/styles', express.static('/Users/hi/code/dotfiles/dev/websitechina1/styles/'))
+app.get ('/contact', async(req,res) => {
+    const contactHtml = await generatorModele('contact')
+    res.send(contactHtml)
+})
+
+app.get ('/signUp', async(req,res) => {
+    const signUpHtml = await generatorModele('signUp')
+    res.send(signUpHtml)
+})
+
+//ecouter la methode Post et la route 
+app.post('/', (req,res)=>{
+    console.log(req.body)
+
+
+
+    //nodemailer
+
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: '',
+            pass: ''
+        }
+    })
+
+    const mailOptions = {
+        from: req.body.email,
+        to: 'mickaelat09@gmail.com',
+        subject: `Message from ${req.body.email}: ${req.body.subject}`,
+        text: req.body.subject
+    }
+
+    transporter.sendMail(mailOptions, (error, info)=>{
+        if(error){
+            console.log(error)
+            res.send('error')
+        }else{
+            console.log('Email sent' + info.response)
+            res.send('success')
+        }
+    })
+
+})
+
+
+//ecoute les requete du repertoire styles,js,images/ 
+app.use('/styles', express.static('/Users/hi/code/dotfiles/dev/websitechina1/styles'))
 app.use('/images', express.static('/Users/hi/code/dotfiles/dev/websitechina1/images/'))
-//retourne les styles 
+app.use('/js', express.static('/Users/hi/code/dotfiles/dev/websitechina1/js/'))
+app.use(express.json())
 
 
 
