@@ -1,0 +1,30 @@
+{
+  
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "name": "websitechina1",
+  "version": "1.0.0",
+  "description": "Website in china",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wondycrack/websitechinav1.git"
+  },
+  "author": "Mickael T",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Wondycrack/websitechinav1/issues"
+  },
+  "homepage": "https://github.com/Wondycrack/websitechinav1#readme",
+  
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemailer": "^6.7.2",
+    "sweetalert2": "^11.3.10"
+  }
+}
