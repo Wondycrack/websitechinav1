@@ -74,7 +74,7 @@ app.use(express.json())
 
 
 //demarrer le  serveur et ecouter un port donne 
-app.listen(port,() => {
+app.listen(process.env.PORT || port,() => {
     console.log
     (`Example app listening on port ${port}`)
 })
