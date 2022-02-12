@@ -7,10 +7,13 @@ const nodemailer = require('nodemailer')
 const generatorModele = require('./api/page/page-get') 
 
 //ecouter la methode GET et la route 
-app.get('/model.html', async(req,res) => {
-    const indexHtml = await generatorModele('index')
-
-    res.send(indexHtml)
+app.get('/', async(req,res) => {
+    try{ const indexHtml = await generatorModele('index');
+    res.send(indexHtml);
+    } catch(e) {
+        console.log(e);
+        res.sendStatus(500);
+    }
     
 })
 
