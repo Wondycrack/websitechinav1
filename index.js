@@ -10,26 +10,38 @@ const generatorModele = require('./api/page/page-get')
 app.get('/', async(req,res) => {
     try{ const indexHtml = await generatorModele('index');
     res.send(indexHtml);
-    } catch(e) {
-        console.log(e);
+    } catch(a) {
+        console.log(a);
         res.sendStatus(500);
     }
     
 })
 
 app.get ('/tech', async(req,res) => {
-    const techHtml = await generatorModele('tech')
-    res.send(techHtml)
+    try{ const techHtml = await generatorModele('tech')
+    res.send(techHtml);
+    } catch(b){
+        console.log(b)
+        res.sendStatus(500)
+    }
 })
 
 app.get ('/contact', async(req,res) => {
-    const contactHtml = await generatorModele('contact')
+    try{ const contactHtml = await generatorModele('contact')
     res.send(contactHtml)
+    } catch(c){
+        console.log(c)
+        res.sendStatus(500)
+    }
 })
 
 app.get ('/signUp', async(req,res) => {
-    const signUpHtml = await generatorModele('signUp')
+    try{ const signUpHtml = await generatorModele('signUp')
     res.send(signUpHtml)
+    } catch(d) {
+        console.log(d)
+        res.sendStatus(500)
+    }
 })
 
 //ecouter la methode Post et la route 
