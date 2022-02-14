@@ -21,9 +21,9 @@ app.get ('/tech', async(req,res) => {
     try{ const techHtml = await generatorModele('tech')
     res.send(techHtml);
     } catch(b){
-        console.log(b)
-        res.sendStatus(500)
-    }
+        console.log(b);
+        res.sendStatus(500);
+       }
 })
 
 app.get ('/contact', async(req,res) => {
