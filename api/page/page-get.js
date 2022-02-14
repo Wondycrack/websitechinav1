@@ -6,7 +6,7 @@ const { join } = require('path')
 
 
 const READ_OPTIONS = {encoding: 'UTF-8'}
-const HTML_URL = '/Users/hi/code/dotfiles/dev/websitechina1/html/'
+const HTML_URL = './html/'
 
 const readFileHtml = file =>
 readFileAsync(join(HTML_URL, file), READ_OPTIONS)
