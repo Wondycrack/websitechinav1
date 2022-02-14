@@ -13,7 +13,7 @@ readFileAsync(join(HTML_URL, file), READ_OPTIONS)
 
 module.exports = async nomPage => {
     //recuperer le contenu du fichier index.html
-    const [
+   try{ const [
         modelHtml,
         indexHeadHtml,
         indexBodyHtml,
@@ -29,4 +29,7 @@ module.exports = async nomPage => {
 
     //retourner la page html
     return indexHtml
-}
+    }catch(w){
+       console.log(w)
+       res.sendStatus(500)
+}}
