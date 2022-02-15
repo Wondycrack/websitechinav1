@@ -81,9 +81,9 @@ app.post('/', (req,res)=>{
 
 
 //ecoute les requete du repertoire styles,js,images/ 
-app.use('/styles/styles.css', express.static('/Users/hi/code/dotfiles/dev/websitechina1/styles/styles.css'))
-app.use('/images', express.static('/Users/hi/code/dotfiles/dev/websitechina1/images/'))
-app.use('/js', express.static('/Users/hi/code/dotfiles/dev/websitechina1/js/'))
+app.use('/styles', express.static(__dirname + '/styles'))
+app.use('/images', express.static(__dirname + '/images/'))
+app.use('/js', express.static(__dirname + '/js/'))
 app.use(express.json())
 
 
