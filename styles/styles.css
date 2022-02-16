@@ -79,7 +79,7 @@
     width: 100%;
     border: none;
     border-radius: 4px;
-    background: #ffb1ff;
+    background: #ff8177;
     color: whitesmoke;
 }
 .button:hover{
@@ -88,7 +88,7 @@
 
 }
 .navbar_links:hover{
-    color: #ffb2ff;
+    color: #ff8177;
     transition: all 0.3s ease;
 }
 
@@ -199,8 +199,8 @@
 }
 .main_container h1{
     font-size: 4rem;
-    background-color: #ffb1ff;
-    background-image: linear-gradient(to top, #ff0844, #ffb1ff 100%);
+    background-color: #ff8177;
+    background-image: linear-gradient(to top, #ff0844, #ff8177 100%);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -209,8 +209,8 @@
 }
 .main_content h2{
     font-size: 4rem;
-    background-color: #ffb1ff;
-    background-image: linear-gradient(to top, #b721ff 0%, #ffb1ff 100%);
+    background-color: #ff8177;
+    background-image: linear-gradient(to top, #b721ff 0%, #ff8177 100%);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -227,7 +227,7 @@
 
 .main_btn {
     font-size: 1rem;
-    background-image: linear-gradient(to top, #b721ff, #ffb1ff 100%);
+    background-image: linear-gradient(to top, #b721ff, #ff8177 100%);
     padding: 14px 32px;
     border: none;
     border-radius: 4px;
@@ -251,7 +251,7 @@
     left: 0;
     width: 0;
     height: 100%;
-    background:orangered;
+    background: orange;
     transition: all 0.35s;
  }
 
@@ -326,7 +326,7 @@ p{
     height: 100vh;
 }
 .services h1{
-    background-color: #ffb2ff;
+    background-color: #ff8177;
     background-image: linear-gradient(to right,
     #ff8177 0%,
     #ff867a 0%,
